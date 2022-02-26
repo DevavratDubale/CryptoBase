@@ -1,6 +1,6 @@
 import logo from './assets/CryptoBase.png'
 import dp from './assets/DisplayPicture.png'
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const NavBar = () => {
     var name = "JOHN DOE";
@@ -10,18 +10,18 @@ const NavBar = () => {
                 <img src={logo} alt="website_logo"  id="navbar-complogo"/>
             </div>
             <div className="navbar-links">
-                <Link to="/">
+                <NavLink exact activeStyle={{color: "#7716A5"}} to="/" >
                     <p>HOME</p>
-                </Link>
-                <Link to="/exchange">
+                </NavLink>
+                <NavLink activeStyle={{color: "#7716A5"}} to="/exchange" >
                     <p>EXCHANGE</p>
-                </Link>
-                <Link to="/portfolio">
+                </NavLink>
+                <NavLink activeStyle={{color: "#7716A5"}} to="/portfolio" >
                     <p>PORTFOLIO</p>
-                </Link>
-                <Link to="/learn">
+                </NavLink>
+                <NavLink activeStyle={{color: "#7716A5"}} to="/learn" >
                     <p>LEARN</p>
-                </Link>
+                </NavLink>
             </div>
             <div className="navbar-profileinfo">
                 <p>{ name }</p>
