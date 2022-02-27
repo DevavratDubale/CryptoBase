@@ -1,3 +1,8 @@
+body{
+  font-family: 'Inter', sans-serif;
+  position: fixed;
+}
+
 .navbar{
   display: flex;
   background-color: #ECEBFE;
@@ -13,14 +18,14 @@
 }
 
 .navbar-logo img{
-  height: 5vh;
+  height: min(5vh,6vw);
 }
 
 .navbar .navbar-links{
-  font-size: 1.8vh;
+  font-size: min(1.8vh,1.5vw);
   display: flex;
   width: 50vw;
-  overflow: scroll;
+  overflow: auto;
   margin-left: 12vw;
 }
 
@@ -41,20 +46,24 @@
 
 .navbar-profileinfo{
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   margin-left: 5vw;
   height: 100%;
   width: 20vw;
   align-items: center;
   justify-content: right;
-  font-size: 1.5vh;
+  font-size: min(1.8vh,1.5vw);
   font-weight: 600;
 }
 
 #navbar-dp img{
   margin-left: 2vw;
   margin-right: 2vw;
-  height: 8vh;
+  height: min(8vh,8vw);
+}
+
+.total-area{
+  display: flex;
 }
 
 .sidebar{
@@ -73,7 +82,7 @@
 }
 
 .sidebar-img img{
-  height: 30vh;
+  height: min(30vh,25vw);
 }
 
 .portfolio{
@@ -85,7 +94,7 @@
 }
 
 .portfolio img{
-  height: 8vh;
+  height: min(8vh,8vw);
   margin-left: 2vw;
 }
 
@@ -95,14 +104,58 @@
 }
 
 .portfolio-text-up{
-  font-size: 2.5vh;
+  font-size: min(2.5vh,2vw);
   color: white;
   font-weight: 600;
 }
 
 .portfolio-text-down{
-  font-size: 2vh;
+  font-size: min(2vh,1.5vw);
   font-weight: 400;
   color: #FFFFFF;
   margin-top: 1vh;
+}
+
+.main-content{
+  width: 75vw;
+  height: 100vh;
+}
+
+.main-content-heading{
+  margin-left: 3vw;
+  margin-top: 5vh;
+}
+
+.main-content-heading-up{
+  color: grey;
+  font-weight: 400;
+  font-size: min(2vh,1.7vw);
+  width: 100%;
+}
+
+.main-content-heading-down{
+  width: 100%;
+  margin-top: 2vh;
+  font-size: min(4vh,2.1vw);
+  font-family: 'Actor', sans-serif;
+  display: flex;
+}
+
+.buttonA{
+  margin-left: 1.5vw;
+  width: 5.5vw;
+}
+
+.buttonB{
+  margin-left: 44vw;
+  width: 10vw;
+  height: 5vh;
+}
+
+.buttonA-icon{
+  height: min(1.5vh,1.5vw);
+}
+
+.buttonB-icon{
+  height: min(2vh,2vw);
 }
