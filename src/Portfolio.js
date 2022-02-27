@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { IconContext } from "react-icons/lib";
 import { GoTriangleUp,GoTriangleDown } from "react-icons/go";
 import { FaPlus } from 'react-icons/fa';
+import PortfolioTable from './PortfolioTable';
 
 const ColorButtonA = styled(Button)(({ theme }) => ({
     color: "white",
@@ -73,6 +74,15 @@ const Portfolio = () => {
                             <FaPlus />
                         </IconContext.Provider>
                     }>Add Crypto</ColorButtonB>
+                    </div>
+                </div>
+                <div className="chart-area"></div>
+                <div className="assets">
+                    <div className="assets-heading">
+                        Your Assets
+                    </div>
+                    <div className="assets-table">
+                        <PortfolioTable />
                     </div>
                 </div>
             </div>

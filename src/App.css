@@ -1,6 +1,5 @@
 body{
   font-family: 'Inter', sans-serif;
-  position: fixed;
 }
 
 .navbar{
@@ -10,6 +9,7 @@ body{
   width: 100vw;
   align-items: center;
   overflow: scroll;
+  position: relative;
 }
 
 .navbar-logo{
@@ -158,4 +158,22 @@ body{
 
 .buttonB-icon{
   height: min(2vh,2vw);
+}
+
+.chart-area{
+  margin-top: 5vh;
+  width: 69vw;
+  height: 30vh;
+  border: 1px solid black;
+}
+
+.assets{
+  margin-top: 5vh;
+  width: 69vw;
+  height: 30vh;
+}
+
+.assets-heading{
+  font-size: min(3vh,3vw);
+  font-weight: 500;
 }
