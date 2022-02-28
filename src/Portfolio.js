@@ -6,6 +6,7 @@ import { IconContext } from "react-icons/lib";
 import { GoTriangleUp,GoTriangleDown } from "react-icons/go";
 import { FaPlus } from 'react-icons/fa';
 import PortfolioTable from './PortfolioTable';
+import PortfolioChart from './PortfolioChart';
 
 const ColorButtonA = styled(Button)(({ theme }) => ({
     color: "white",
@@ -76,7 +77,9 @@ const Portfolio = () => {
                     }>Add Crypto</ColorButtonB>
                     </div>
                 </div>
-                <div className="chart-area"></div>
+                <div className="chart-area">
+                    <PortfolioChart />
+                </div>
                 <div className="assets">
                     <div className="assets-heading">
                         Your Assets

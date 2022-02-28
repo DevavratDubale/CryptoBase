@@ -9,7 +9,6 @@ body{
   width: 100vw;
   align-items: center;
   overflow: scroll;
-  position: relative;
 }
 
 .navbar-logo{
@@ -164,7 +163,6 @@ body{
   margin-top: 5vh;
   width: 69vw;
   height: 30vh;
-  border: 1px solid black;
 }
 
 .assets{

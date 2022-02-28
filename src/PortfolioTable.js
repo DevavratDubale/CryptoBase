@@ -9,52 +9,51 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'name', label: 'NAME', minWidth: "10vw", align: 'left', format: (value) => value, sx: (value) => (value>0) ? {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} : {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} },
+  { id: 'cost', label: 'COST', minWidth: "10vw", align: 'right', format: (value) => "$ "+value, sx: (value) => (value>0) ? {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} : {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} },
   {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
+    id: 'current_price',
+    label: 'CURRENT PRICE',
+    minWidth: "10vw",
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+    format: (value) => "$ "+value,
+    sx: (value) => (value>0) ? {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} : {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"}
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
-    minWidth: 170,
+    id: 'new_holdings',
+    label: 'HOLDINGS',
+    minWidth: "10vw",
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
+    format: (value) => value,
+    sx: (value) => (value>0) ? {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} : {color:"white",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"}
+},
+{
+    id: 'net_income',
+    label: 'PROFIT/LOSS',
+    minWidth: "10vw",
     align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+    format: (value) =>  {
+        return ((value>0)?"+":"-")+" $ " + ((value < 0)?(value*-1):(value));
+    },
+    sx: (value) => (value>0) ? {color:"#47A663",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"} : {color:"#F94F59",fontWeight: "500",fontSize:"min(1.5vh,1.5vw)"}
+    
+  }
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(name, cost, current_price, holdings) {
+  console.log(holdings);
+  let net_income = ((current_price-cost) * holdings).toFixed(4);
+  let new_holdings = holdings + " " + name.substring(name.indexOf('(')+1,name.length-1);
+  console.log(new_holdings,"HI");
+  return { name, cost, current_price, new_holdings, net_income };
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData("Binance Coin (BNB)",200.98,280.79,0.47),
+  createData("Polkadot (DOT)",10.45,20.12,9,8),
+  createData("Bitcoin (BTC)",43609.43,42123.55,0.0026),
+  createData("Ethereum (ETH)",3200.18,3210.49,0.035),
+  createData("Chainlink (LINK)",16.98,28.99,5.8),
 ];
 
 export default function StickyHeadTable() {
@@ -71,8 +70,8 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' , marginTop: "3vh", backgroundColor: "black"}}>
-      <TableContainer sx={{ maxHeight: "20vh"}}>
+    <Paper sx={{ width: '100%', overflow: 'hidden' , marginTop: "3vh", backgroundColor: "#333333"}}>
+      <TableContainer sx={{ maxHeight: "28vh"}}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -81,7 +80,7 @@ export default function StickyHeadTable() {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
-                  sx={{ backgroundColor: "black", color: "white" }}
+                  sx={{ backgroundColor: "#333333", color: "white", fontWeight: "600", fontSize: "min(1.5vh,1.5vw)" }}
                 >
                   {column.label}
                 </TableCell>
@@ -97,10 +96,8 @@ export default function StickyHeadTable() {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align} sx={{ color: "white" }}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
+                        <TableCell key={column.id} align={column.align} sx={column.sx(value)}>
+                          {column.format ? column.format(value):value}
                         </TableCell>
                       );
                     })}
@@ -110,15 +107,6 @@ export default function StickyHeadTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 10]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
     </Paper>
   );
 }
