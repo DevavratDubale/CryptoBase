@@ -1,18 +1,18 @@
 body{
   font-family: 'Inter', sans-serif;
 }
-
+/*navbar*/
 .navbar{
   display: flex;
   background-color: #ECEBFE;
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   align-items: center;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .navbar-logo{
-  margin-left: 1vw;
+  margin-left: 2vw;
   width: 25vw;
 }
 
@@ -58,8 +58,10 @@ body{
 #navbar-dp img{
   margin-left: 2vw;
   margin-right: 2vw;
-  height: min(8vh,8vw);
+  height: min(6vh,6vw);
 }
+
+/*portfolio*/
 
 .total-area{
   display: flex;
@@ -174,4 +176,180 @@ body{
 .assets-heading{
   font-size: min(3vh,3vw);
   font-weight: 500;
+}
+
+/* HOME */
+
+.sec1{
+  background-image: url(./assets/bg.png);
+  background-size: cover;
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+.logo{
+  margin-top: 15vh;
+  margin-left: 13vw;
+  width: 25vw;
+  height: 27vw;
+}
+
+.sec1-right{
+  margin-top:25vh ;
+  margin-left:10vw ;
+  margin-right: 7vw;
+}
+
+.sec1-heading{
+  color: #8D8CA8;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sec1-para{
+  color: #000000;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sec1-button{
+  border-radius: 45% ;
+  border: 5px solid #8D8CA8;
+  height: 7vh;
+  width: 12vw;
+  font-size: 3vh;
+  background-color: #FFFFFF;
+}
+
+.sec2-heading{
+  font-size: 5vh;
+  padding: 35px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sec2-cards{
+  display: flex;
+}
+
+.sec2-card {
+  padding: 40px;
+  transition: 0.3s;
+  width: 20%;
+  border-radius: 5px;
+}
+
+.sec2-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.sec2-container {
+  background-color: #C1A9E8;
+  height: 20vh;
+  font-size: 23px;
+  padding: 2px 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+}
+
+.sec2-learn{
+  padding: 30px;
+  font-size: 25px;
+  font-weight:600;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sec3{
+  background-color: #ECEBFE;
+  height: 90vh;
+}
+
+.sec3-heading{
+  padding: 30px;
+  font-size: 33px;
+  font-weight:600;
+}
+
+.sec3-body{
+  background-color: #FFFFFF;
+  height: 70vh;
+  border-radius: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sec4-heading{
+  color: #929292;
+  font-size: 55px;
+  text-align: center;
+  padding: 40px;
+}
+
+.sec4-cards{
+  display: flex;
+}
+
+.sec4-card{
+  padding: 50px;
+  width: 20%;
+}
+
+.sec4-container{
+  text-align: center;
+  height: 20vh;
+  font-size: 23px;
+  padding: 2px 16px;
+}
+
+.sec4-img{
+  height: 10vh;
+}
+
+.sec5{
+  background-color: #ECEBFE;
+  height: 80vh;
+}
+
+.sec5-heading{
+  padding: 25px;
+  font-size: 33px;
+  font-weight:800;
+}
+
+.sec5-body{
+  background-color: #FFFFFF;
+  height: 60vh;
+  border-radius: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sec6{
+  background-color: #333333;
+  height: 50vh;
+  width: 100%;
+}
+
+.sec6-heading{
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 40px;
+}
+
+.sec6-button{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 7px 20px;
+	border-radius: 25px;
+  color: rgb(0, 0, 0);
+  background-color: #FFFFFF;
+  transition: .4s;
+}
+
+.sec6-button:hover{
+  background-image: -webkit-linear-gradient(45deg, #ffffff 0%, #000000 100%);
+  background-image: linear-gradient(45deg, #ffffff 0%, #000000 100%);
 }
