@@ -2,7 +2,6 @@ import logo from './assets/logo.png'
 import bank from './assets/bank.png'
 import account from './assets/account.png'
 import buy from './assets/buy.png'
-import { link } from 'react-router-dom'
 
 const HomePage = () => {
     return (
@@ -56,13 +55,19 @@ const HomePage = () => {
                             <img src={account} alt=" "  class="sec4-img"/>
                                 <p>Create an account  </p> 
                             </div>
-                        </div><hr></hr>
+                        </div>
+                        <div className="line">
+
+                        </div>
                         <div class="sec4-card">
                             <div class="sec4-container"> 
                             <img src={bank} alt=" "  class="sec4-img"/>
                                 <p>Link with your bank</p> 
                             </div>
-                        </div><hr></hr>
+                        </div>
+                        <div className="line">
+                            
+                        </div>
                         <div class="sec4-card">
                             <div class="sec4-container">
                                 <img src={buy} alt=" "  class="sec4-img"/>
