@@ -373,3 +373,95 @@ body{
 .exchange-cards{
   margin-top: 10vh;
 }
+
+/* Login */
+.image{
+  position: absolute;
+left: 0px;
+bottom: 0px;
+}
+
+.middlebar{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  text-align: center;
+  color: #645086;
+}
+
+.logintext{
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonlogin{
+  padding: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.G-image{ 
+  height:23px;
+  width: 23px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right:20px ;
+  padding-left:20px ;
+}
+
+.signinbutton{
+  border: 0px ;
+  width:15vw;
+  height: 7vh;
+  display: flex;
+  background-color: #ECEBFE;
+  font-size:15px ;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginline{
+  height: 0vh;
+  width:8vw;
+  border-style: solid;
+  border-width: 1px;
+  align-self: center;
+}
+
+.loginsec4-card{
+  display: flex;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.loginsec4-container{
+  font-size: 15px;
+  padding: 0px 20px;
+}
+
+.loginform{
+  padding: 20px;
+  color: #645087;
+}
+
+.emaillabel{
+  margin-left: 0px;
+}
+
+.email{
+  border-style: none;
+  outline: none;
+  border-bottom-style: groove;
+}
+
+.Password{
+  border-style: none;
+  outline: none;
+  border-bottom-style: groove;
+}

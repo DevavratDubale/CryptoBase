@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import Learn from './Learn';
 import Portfolio from './Portfolio';
 import Exchange from './Exchange';
+import Login from './Login';
 
 function App() {
   const balance = (1474.9109).toFixed(2);
@@ -18,6 +19,9 @@ function App() {
         <Route exact path="/">
         <NavBar />
             <HomePage />
+          </Route>
+          <Route exact path="/Login">
+             <Login/>
           </Route>
           <Route exact path="/portfolio">
           <NavBar />
