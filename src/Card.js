@@ -2,7 +2,7 @@ import {AnimateSharedLayout, motion} from 'framer-motion'
 import { useState } from "react";
 import { IconContext } from "react-icons/lib";
 import { FaBitcoin } from "react-icons/fa";
-function Card({crypto_name , crypto_symbol , crypto_currPrice , crypto_prevPrice}) {
+function Card({crypto_name , crypto_symbol , crypto_currPrice , crypto_marketCap , crypto_priceChange, crypto_img}) {
 const [open,setOpen]=useState(false)
 return <AnimateSharedLayout>
 {open?
@@ -16,14 +16,12 @@ return <AnimateSharedLayout>
           <table style={{ width:"100%", textAlign:"left" , height:"8vh", marginLeft:"1vw"}}>
     <tr>
       <th style={{ width:"8%", fontSize:"2vh" }}>
-        <IconContext.Provider value={{ className: "tempCoin-icon" }}>
-          <FaBitcoin />
-        </IconContext.Provider>
+        <img src={crypto_img} alt={crypto_name} className="tempCoin-icon"/>
       </th>
       <th style={{ width:"30%", fontSize:"2vh",  }}>{crypto_name + " (" + crypto_symbol + ")"}</th>
-      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_currPrice}</th>
-      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_prevPrice}</th>
-      <th style={{ width:"20%", fontSize:"2vh", color: ((crypto_currPrice - crypto_prevPrice)<0)?"red":"green" }}>{((crypto_currPrice - crypto_prevPrice)/100).toFixed(2) + "%"}</th>
+      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_currPrice.toFixed(4)}</th>
+      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_marketCap}</th>
+      <th style={{ width:"20%", fontSize:"2vh", color: ((crypto_priceChange)<0)?"red":"green" }}>{(crypto_priceChange).toFixed(2) + "%"}</th>
     </tr>
   </table></motion.h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,14 +42,12 @@ return <AnimateSharedLayout>
   <table style={{ width:"100%", textAlign:"left" , height:"8vh", marginLeft:"1vw"}}>
     <tr>
       <th style={{ width:"8%", fontSize:"2vh" }}>
-        <IconContext.Provider value={{ className: "tempCoin-icon" }}>
-          <FaBitcoin />
-        </IconContext.Provider>
+        <img src={crypto_img} alt={crypto_name} className="tempCoin-icon"/>
       </th>
       <th style={{ width:"30%", fontSize:"2vh",  }}>{crypto_name + " (" + crypto_symbol + ")"}</th>
-      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_currPrice}</th>
-      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_prevPrice}</th>
-      <th style={{ width:"20%", fontSize:"2vh", color: ((crypto_currPrice - crypto_prevPrice)<0)?"red":"green" }}>{((crypto_currPrice - crypto_prevPrice)/100).toFixed(2) + "%"}</th>
+      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_currPrice.toFixed(4)}</th>
+      <th style={{ width:"20%", fontSize:"2vh",  }}>{"$ " + crypto_marketCap}</th>
+      <th style={{ width:"20%", fontSize:"2vh", color: ((crypto_priceChange)<0)?"red":"green" }}>{(crypto_priceChange).toFixed(2) + "%"}</th>
     </tr>
   </table>
 </motion.h1>
