@@ -450,18 +450,88 @@ bottom: 0px;
   color: #645087;
 }
 
-.emaillabel{
-  margin-left: 0px;
+
+.fieldone{
+  text-align: left;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 4vh;
+  padding-bottom: 8vh;
+}
+
+.fieldtwo{
+  text-align: left;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .email{
   border-style: none;
   outline: none;
   border-bottom-style: groove;
+  width: 17vw;
+  padding-top: 4vh;
 }
 
 .Password{
   border-style: none;
   outline: none;
   border-bottom-style: groove;
+  width: 17vw;
+  padding-top: 4vh;
+}
+
+.login{
+  background-color: #ECEBFE;
+  border: none;
+  width: 7vw;
+  height: 5vh;
+  font-size: 15px;
+}
+
+.register{
+  background-color: #ECEBFE;
+  border: none;
+  width: 7vw;
+  height: 5vh;
+  font-size: 15px;
+}
+
+.submits{
+  display: flex;
+  width: 10vw;
+  padding-left: 15vw;
+  justify-content: space-evenly;
+  padding-top: 5vh;
+  
+  
+}
+
+.registers{
+  padding-left: 3vw;
+}
+
+.learnheading{
+  text-align: center;
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45vw;
+  line-height: 10vh;
+}
+
+.learnline{
+  color: #C1A9E8;
+  width: 10vw;
+}
+
+.questions{
+  padding-left:10vw ;
+  padding-right:10vw ;
+  padding-top: 5vh;
+}
+
+.question{
+  color:#645086;
+  padding-bottom: 2vh;
 }

@@ -33,11 +33,19 @@ const Login = () => {
                    <div className="loginline"></div>
                 </div>
                 <form className='loginform'>  
-                    <label className='emaillabel' for="Email Address">Email Address </label> <br/>  
-                    <input type="email" className="email" name="Email"/> <br/>  
+                <div className="fieldone">
+                    <label className='emaillabel' for="Email Address">Email Address </label>  <br/>
+                    <input type="email" className="email" name="Email"/> 
+                </div>
+                <div className="fieldtwo">
                     <label className='passwordlabel' for="Password">Password </label>  <br/>
-                    <input type="text" className="Password" name="Password"/> <br/>  
+                    <input type="text" className="Password" name="Password"/> 
+                </div>
                 </form>  
+                <div className="submits">
+                    <div className='logins'><button className="login"> Login</button></div>
+                    <div className='registers'><button className="register">Register</button></div>
+                </div>
             </div>
         </div>
     );

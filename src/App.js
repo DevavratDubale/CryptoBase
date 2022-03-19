@@ -31,6 +31,10 @@ function App() {
           <NavBar />
             <Exchange balance={balance} changeInBalance={changeInBalance}/>
           </Route>
+          <Route exact path="/learn">
+          <NavBar />
+             <Learn/>
+          </Route>
           
         </Switch>
       </div>
