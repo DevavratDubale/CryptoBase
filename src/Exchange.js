@@ -50,7 +50,6 @@ const Exchange = ({ balance, changeInBalance }) => {
             </tr>
           </table>
           {handleSearch()
-            .slice(1, 10)
             .map((row) => {
               console.log(
                 row.name,
