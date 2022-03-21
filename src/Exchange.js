@@ -65,6 +65,7 @@ const Exchange = ({ balance, changeInBalance }) => {
                   crypto_marketCap={row.market_cap.toString().slice(0, -6)}
                   crypto_priceChange={row.price_change_percentage_24h}
                   crypto_img={row?.image}
+                  crypto_id={row.id}
                 />
               );
             })}

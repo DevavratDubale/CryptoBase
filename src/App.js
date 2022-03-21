@@ -6,6 +6,7 @@ import Learn from './Learn';
 import Portfolio from './Portfolio';
 import Exchange from './Exchange';
 import Login from './Login';
+import CoinPage from './CoinPage';
 
 function App() {
   const balance = (1474.9109).toFixed(2);
@@ -35,7 +36,10 @@ function App() {
           <NavBar />
              <Learn/>
           </Route>
-          
+          <Route path="/exchange/:id" >
+            <NavBar />
+            <CoinPage balance={balance} />
+          </Route>
         </Switch>
       </div>
     </Router>

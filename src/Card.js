@@ -1,8 +1,8 @@
 import {AnimateSharedLayout, motion} from 'framer-motion'
 import { useState } from "react";
-import { IconContext } from "react-icons/lib";
-import { FaBitcoin } from "react-icons/fa";
-function Card({crypto_name , crypto_symbol , crypto_currPrice , crypto_marketCap , crypto_priceChange, crypto_img}) {
+import { useHistory } from "react-router-dom";
+function Card({crypto_name , crypto_symbol , crypto_currPrice , crypto_marketCap , crypto_priceChange, crypto_img, crypto_id}) {
+let history = useHistory();
 const [open,setOpen]=useState(false)
 return <AnimateSharedLayout>
 {open?
@@ -34,8 +34,9 @@ return <AnimateSharedLayout>
             </p>
 </motion.div>
 :
-
-<motion.div onClick={()=>setOpen(true)}
+<motion.div onClick={()=> {
+  history.push(`/exchange/${crypto_id}`);
+}}
             className="normal-card"
             layoutId="expandable-card" style={{width:"60vw" , marginLeft:"auto" , marginRight:"auto", height:"8vh"}}>
 <motion.h1 layoutId="expandable-card-h">
