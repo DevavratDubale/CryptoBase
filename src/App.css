@@ -245,7 +245,7 @@ body{
 }
 
 .sec2-container {
-  background-color: #C1A9E8;
+  background-color: #e0bcf6;
   height: 20vh;
   font-size: 23px;
   padding: 2px 16px;
@@ -533,6 +533,7 @@ bottom: 0px;
 
 .question{
   color:#645086;
+  font-size: 20px;
   padding-bottom: 2vh;
 }
 
