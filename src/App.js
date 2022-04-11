@@ -6,6 +6,7 @@ import Learn from './Learn';
 import Portfolio from './Portfolio';
 import Exchange from './Exchange';
 import Login from './Login';
+import Register from './Register';
 import CoinPage from './CoinPage';
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/Login">
              <Login/>
+          </Route>
+          <Route exact path="/Register">
+             <Register/>
           </Route>
           <Route exact path="/portfolio">
           <NavBar />
