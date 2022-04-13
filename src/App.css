@@ -247,7 +247,7 @@ body{
 .sec2-container {
   background-color: #e0bcf6;
   height: 20vh;
-  font-size: 23px;
+  font-size: 3vh;
   color: #000000;
   text-decoration: none;
   padding: 2px 16px;
@@ -505,6 +505,13 @@ bottom: 0px;
   color: #645087;
 }
 
+.feildzero{
+    text-align: left;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 4vh;
+    padding-bottom: 8vh;
+}
 
 .fieldone{
   text-align: left;
@@ -518,6 +525,15 @@ bottom: 0px;
   text-align: left;
   padding-left: 10vw;
   padding-right: 10vw;
+  padding-top: 4vh;
+}
+
+.Fullname{
+  border-style: none;
+  outline: none;
+  border-bottom-style: groove;
+  width: 17vw;
+  padding-top: 4vh;
 }
 
 .email{
