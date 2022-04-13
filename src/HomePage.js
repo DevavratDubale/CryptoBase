@@ -18,34 +18,41 @@ const HomePage = () => {
                 <div className="sec1-right">
                     <div className="sec1-heading">Kickstart Your Crypto Journey with CryptoBase</div><br></br>
                     <div className="sec1-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut aliquam elit. Morbi dignissim nulla vel pharetra mollis. Sed fringilla fringilla urna.</div>
-                    <br></br><button className="sec1-button">Register/Login</button>
+                    <br></br><Link to="/Login"><button className="sec1-button">Register/Login</button></Link>
                 </div>
             </div>
             <div className="sec2">
                 <div className="sec2-heading">We have got you all covered</div>
                     <div className="sec2-cards">
+                    
                         <div class="sec2-card">
                             <div class="sec2-container"> 
-                                <p>What is a crypto wallet?  </p> 
+                            <Link to="/learn"><p>What is a crypto wallet?  </p> </Link>
                             </div>
                         </div>
+                        
+                        
                         <div class="sec2-card">
                             <div class="sec2-container"> 
-                                <p>What are the top cryptocurrencies? </p> 
+                            <Link to="/learn"><p>What are the top cryptocurrencies? </p> </Link>
                             </div>
                         </div>
+                        
                         <div class="sec2-card">
                             <div class="sec2-container">
-                                <p>How are cryptocurrency transactions recorded? </p> 
+                            <Link to="/learn"><p>How are cryptocurrency transactions recorded? </p> </Link>
                             </div>
                         </div>
+                        
+                        
                         <div class="sec2-card">
                             <div class="sec2-container"> 
-                                <p>Are blockchain and cryptocurrencies the same? </p> 
+                            <Link to="/learn">
+                                <p>Are blockchain and cryptocurrencies the same? </p> </Link>
                             </div>
                         </div>
                     </div>
-                    <div className="sec2-learn">Learn More...</div>
+                    <div className="sec2-learn"><Link to="/learn">Learn More...</Link></div>
             </div>
             <div className="sec3">
                 <div className="sec3-heading">Current Trends</div>
@@ -105,7 +112,7 @@ const HomePage = () => {
             </div>
             <div className="sec6">
                 <div className="sec6-heading">JOIN FOR FREE</div>
-                <button className="sec6-button">Sign Up</button>
+                <Link to="/Login"><button className="sec6-button">Sign Up</button></Link>
                 <br></br>
                 <br></br>
                 <div className="footerdown">
