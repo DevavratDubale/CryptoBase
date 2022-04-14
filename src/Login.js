@@ -1,5 +1,6 @@
 import sideimage from './assets/SidebarImage.png'
 import G from './assets/G.png'
+import { Link } from "react-router-dom";
 import './App.css';
 
 const Login = () => {
@@ -44,7 +45,7 @@ const Login = () => {
                 </form>  
                 <div className="submits">
                     <div className='logins'><button className="login"> Login</button></div>
-                    <div className='registers'><button className="register">Register</button></div>
+                    <div className='registers'><Link to="/Register"><button className="register">Register</button></Link></div>
                 </div>
             </div>
         </div>

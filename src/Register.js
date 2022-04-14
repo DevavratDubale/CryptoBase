@@ -1,5 +1,5 @@
 import sideimage from './assets/SidebarImage.png'
-import G from './assets/G.png'
+import { Link } from "react-router-dom";
 import './App.css';
 
 const Register = () => {
@@ -13,37 +13,22 @@ const Register = () => {
             </div>
             <div className='middlebar'>
                 <h1>Create an Account</h1>
-                <div className='logintext'>
-                    
-                </div>
-                <div className='logintext'>
-                    Please login with your personal account
-                </div>
-                <div className="buttonlogin">
-                    <button className="signinbutton">
-                        <img className="G-image" src={G} /> 
-                        <p>Sign in with Google</p>               
-                    </button>
-                </div>
-                <div class="loginsec4-card">
-                    <div className="loginline"></div>
-                        <div class="loginsec4-container"> 
-                            <p>OR</p> 
-                        </div>
-                   <div className="loginline"></div>
-                </div>
                 <form className='loginform'>  
+                <div className="feildzero">
+                    <label className='fullnamelabel' for="Fullname">Full Name </label>  
+                    <input type="text" className="Fullname" name="Fullname"/> 
+                </div>
                 <div className="fieldone">
-                    <label className='emaillabel' for="Email Address">Email Address </label>  <br/>
+                    <label className='emaillabel' for="Email Address">Email Address </label>  
                     <input type="email" className="email" name="Email"/> 
                 </div>
                 <div className="fieldtwo">
-                    <label className='passwordlabel' for="Password">Password </label>  <br/>
+                    <label className='passwordlabel' for="Password">Password </label> 
                     <input type="text" className="Password" name="Password"/> 
                 </div>
                 </form>  
                 <div className="submits">
-                    <div className='logins'><button className="login"> Login</button></div>
+                    <div className='logins'><Link to="/login"><button className="login"> Login</button></Link></div>
                     <div className='registers'><button className="register">Register</button></div>
                 </div>
             </div>
