@@ -621,10 +621,10 @@ bottom: 0px;
 }
 
 .coin-page-head-card{
-  margin: 50px;
+  margin: 5vh;
   display: flex;
-  height: 50px;
-  width: 180px;
+  height: 8vh;
+  width: 18vw;
   border-radius: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -634,4 +634,24 @@ bottom: 0px;
   width: 30%;
   display: flex;
   justify-content: center;
+}
+
+.coin-page-head-card-name{
+  display: flex;
+  font-size: 2.5vh;
+  width: 70%;
+}
+
+.coin-page-info{
+  overflow: hidden;
+  width: 90%;
+  height: 20vh;
+  margin-left: 5vh;
+  font-size: 2vh;
+}
+
+.coin-page-chart{
+  width: 90%;
+  margin-left: 1vh;
+  height: 45vh;
 }
