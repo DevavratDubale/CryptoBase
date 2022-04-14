@@ -1,9 +1,31 @@
 import sideimage from './assets/SidebarImage.png'
 import G from './assets/G.png'
 import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { auth } from "./firebase";
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import './App.css';
 
 const Login = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = async () => {
+        if (!email || !password) {
+          
+          return;
+        }
+    
+        try {
+          const result = await signInWithEmailAndPassword(auth, email, password);
+        } 
+        catch (error) {
+          return;
+        }
+      };
+    
+
     return (
         <div className='body'>
             <div className='leftbar'>
@@ -44,7 +66,9 @@ const Login = () => {
                 </div>
                 </form>  
                 <div className="submits">
-                    <div className='logins'><button className="login"> Login</button></div>
+                    <div className='logins'>
+                        <button className="login" onClick={handleSubmit}> Login</button>
+                    </div>
                     <div className='registers'><Link to="/Register"><button className="register">Register</button></Link></div>
                 </div>
             </div>
