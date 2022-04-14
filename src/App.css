@@ -620,4 +620,18 @@ bottom: 0px;
   justify-content: space-evenly;
 }
 
+.coin-page-head-card{
+  margin: 50px;
+  display: flex;
+  height: 50px;
+  width: 180px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
 
+.coin-page-head-card-image{
+  border-right: 1px solid lightgrey;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}

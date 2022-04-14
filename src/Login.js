@@ -20,10 +20,10 @@ const Login = () => {
                 <div className='logintext'>
                     Please login with your personal account
                 </div>
-                <div className="buttonlogin">
+                {/* <div className="buttonlogin">
                     <button className="signinbutton">
                         <img className="G-image" src={G} /> 
-                        <p>Sign in with Google</p>               
+                        <p style={{fontSize: "15px"}}>Sign in</p>               
                     </button>
                 </div>
                 <div class="loginsec4-card">
@@ -32,7 +32,7 @@ const Login = () => {
                             <p>OR</p> 
                         </div>
                    <div className="loginline"></div>
-                </div>
+                </div> */}
                 <form className='loginform'>  
                 <div className="fieldone">
                     <label className='emaillabel' for="Email Address">Email Address </label>  <br/>

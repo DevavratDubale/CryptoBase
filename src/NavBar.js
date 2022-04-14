@@ -3,7 +3,7 @@ import dp from './assets/DisplayPicture.png'
 import { Link,NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    var name = "JOHN CENA";
+    var name = "JOHN DOE";
     return (
         <div className="navbar">
             <div className="navbar-logo">
