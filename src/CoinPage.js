@@ -6,6 +6,24 @@ import Sidebar from "./Sidebar";
 import { LinearProgress } from "@mui/material";
 import HtmlReactParser from 'html-react-parser';
 import CoinChart from "./CoinChart";
+
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import { IconContext } from "react-icons/lib";
+import { FaPlus } from 'react-icons/fa';
+
+
+const ColorButtonBB = styled(Button)(({ theme }) => ({
+  color: "white",
+  // backgroundImage: "linear-gradient(to right,#645087, #C1A9E8)",
+  fontWeight: "500",
+  fontSize: "min(1.5vh,1.5vw)"
+}));
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const CoinPage = ({ balance }) => {
   const { id } = useParams();
   const [coin, setCoin] = useState();
@@ -41,9 +59,27 @@ const CoinPage = ({ balance }) => {
               {coin.name + "(" + coin.symbol.toUpperCase() + ")"}
             </p>
           </div>
+          {/* <div className="buttonBB">
+                        <ColorButtonBB fullWidth= {true} variant="contained" startIcon={
+                            <IconContext.Provider value={{ className: "buttonBB-icon" }}>
+                                <FaPlus />
+                            </IconContext.Provider>
+                        }>
+                          Add Crypto
+                          </ColorButtonBB>
+                        </div> */}
+         
         </div>
-        <div className="coin-page-info">
-          {HtmlReactParser(coin.description.en.split(". ").join(" ").substr(0,700))}
+        
+        <div className="coin-page-left">
+          <div className="coin-page-info">
+            {HtmlReactParser(coin.description.en.split(". ").join(" ").substr(0,700))}
+          </div>
+          <div className="coin-page-buttons">
+            <div className="coin-page-buttons-currentprice"><p><b>Current Price</b></p><p>{ symbol + " " + numberWithCommas(coin.market_data.current_price[currency.toLowerCase()]) }</p></div>
+            <div className="coin-page-buttons-ratechange"><p><b>Market Cap</b></p><p>{ symbol + " " + numberWithCommas(coin.market_data.market_cap[currency.toLowerCase()]) }</p></div>
+            <div className="coin-page-buttons-marketcap">	<p><b>Rate Change</b></p><p style={{ color: (coin.market_data.price_change_24h > 0) ? "green" : "red" }} >{ symbol + " " + numberWithCommas((coin.market_data.price_change_24h_in_currency[currency.toLowerCase()]).toFixed(4)) }</p></div>
+          </div>
         </div>
         <div className="coin-page-chart">
         <CoinChart coin={coin}/>
