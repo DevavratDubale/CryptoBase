@@ -4,23 +4,32 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { auth } from "./firebase";
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useHistory } from "react-router-dom";
 import './App.css';
+import { CryptoState } from './CryptoContext';
 
 const Login = () => {
-
+    
+    let history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { name , setName } = CryptoState();
 
     const handleSubmit = async () => {
+        console.log(email,password);
         if (!email || !password) {
-          
+          console.log("Credentials not provided");
           return;
         }
     
         try {
           const result = await signInWithEmailAndPassword(auth, email, password);
+          setName("Umang Bhutoria");
+          console.log(result);
+          history.push(`/`);
         } 
         catch (error) {
+          console.log("Invalid Credentials");
           return;
         }
       };
@@ -42,27 +51,14 @@ const Login = () => {
                 <div className='logintext'>
                     Please login with your personal account
                 </div>
-                {/* <div className="buttonlogin">
-                    <button className="signinbutton">
-                        <img className="G-image" src={G} /> 
-                        <p style={{fontSize: "15px"}}>Sign in</p>               
-                    </button>
-                </div>
-                <div class="loginsec4-card">
-                    <div className="loginline"></div>
-                        <div class="loginsec4-container"> 
-                            <p>OR</p> 
-                        </div>
-                   <div className="loginline"></div>
-                </div> */}
                 <form className='loginform'>  
                 <div className="fieldone">
                     <label className='emaillabel' for="Email Address">Email Address </label>  <br/>
-                    <input type="email" className="email" name="Email"/> 
+                    <input type="email" className="email" name="Email" onChange={(e)=>setEmail(e.target.value)}/> 
                 </div>
                 <div className="fieldtwo">
                     <label className='passwordlabel' for="Password">Password </label>  <br/>
-                    <input type="text" className="Password" name="Password"/> 
+                    <input type="password" className="Password" name="Password" onChange={(e)=>setPassword(e.target.value)}/> 
                 </div>
                 </form>  
                 <div className="submits">

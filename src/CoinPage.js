@@ -9,8 +9,6 @@ import CoinChart from "./CoinChart";
 
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { IconContext } from "react-icons/lib";
-import { FaPlus } from 'react-icons/fa';
 
 
 const ColorButtonBB = styled(Button)(({ theme }) => ({

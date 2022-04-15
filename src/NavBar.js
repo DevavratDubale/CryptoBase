@@ -1,9 +1,23 @@
 import logo from './assets/CryptoBase.png'
 import dp from './assets/DisplayPicture.png'
-import { Link,NavLink } from "react-router-dom";
+import { Link,NavLink,useHistory } from "react-router-dom";
+import { CryptoState } from './CryptoContext';
+import { auth } from "./firebase";
+import { signOut } from "firebase/auth";
+import { IconContext } from "react-icons/lib";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const NavBar = () => {
-    var name = "JOHN DOE";
+    
+    const { user, name } = CryptoState();
+    let history = useHistory();
+    console.log(user);
+
+    const logOut = () => {
+        signOut(auth);
+        history.push(`/`);
+      };
+
     return (
         <div className="navbar">
             <div className="navbar-logo">
@@ -24,10 +38,19 @@ const NavBar = () => {
                 </NavLink>
             </div>
             <div className="navbar-profileinfo">
-                <p>{ name }</p>
-                <div id="navbar-dp">
-                    <img src={dp} alt=""/>
-                </div>
+                {user ? (
+                    <>
+                        <p>{ name }</p>
+                        <div id="navbar-dp">
+                            <img src={dp} alt="" onClick={logOut}/>
+                        </div>
+                        <IconContext.Provider value={{ className: "logout-icon" }}>
+                            <IoLogOutOutline onClick={logOut}/>
+                        </IconContext.Provider>
+                    </>
+                ) : (
+                    <button className="sec6-button" onClick={history.push(`/login`)}>Register/Login</button>
+                )}
             </div>
         </div>
     );
